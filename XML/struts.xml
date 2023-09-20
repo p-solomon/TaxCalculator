@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="login" class="data.action.LoginAction">
+			<result name="adminDashboard">/WEB-INF/pages/AdminDashboard.jsp</result>
+			<result name="employeeDashboard">/WEB-INF/pages/EmployeeDashboard.jsp</result>
+			<result name="error">/WEB-INF/pages/Login.jsp</result>
+		</action>
+
+		<action name="logoutUser" class="data.action.LogoutAction">
+			<result name="success">/WEB-INF/pages/Login.jsp</result>
+			<result name="error">/WEB-INF/pages/Login.jsp</result>
+		</action>
+
+		<action name="addEmployeePage">
+			<result name="success">/WEB-INF/pages/AddEmployee.jsp</result>
+		</action>
+
+		<action name="viewAllEmployees"
+			class="data.action.AllEmployeesAction">
+			<result name="success">/WEB-INF/pages/ViewAllEmployees.jsp</result>
+		</action>
+
+
+		<action name="removeEmployeeForm"
+			class="data.action.EmployeeRemoveAction">
+			<result name="success">/WEB-INF/pages/AdminDashboard.jsp</result>
+			<result name="error">/WEB-INF/pages/RemoveEmployee.jsp</result>
+		</action>
+
+		<action name="ViewTaxForm"
+			class="data.action.EmployeeRemoveAction">
+			<result name="success">/WEB-INF/pages/AdminDashboard.jsp</result>
+		</action>
+
+		<action name="yearlyTaxForm"
+			class="data.action.YearlyTaxAction">
+			<result name="success">/WEB-INF/pages/ViewTax.jsp</result>
+			<result name="error">/WEB-INF/pages/ViewTax.jsp</result>
+		</action>
+
+		<action name="addEmployeeForm"
+			class="data.action.AddEmployeeAction">
+			<result name="success">/WEB-INF/pages/AdminDashboard.jsp</result>
+			<result name="error">/WEB-INF/pages/AddEmployee.jsp</result>
+		</action>
+
+		<action name="viewTax">
+			<result name="success">/WEB-INF/pages/ViewTax.jsp</result>
+		</action>
+
+		<action name="addEmployee">
+			<result name="success">/WEB-INF/pages/AddEmployee.jsp</result>
+		</action>
+
+		<action name="removeEmployee">
+			<result name="success">/WEB-INF/pages/RemoveEmployee.jsp</result>
+		</action>
+
+		<action name="calculateTaxPage">
+			<result name="success">/WEB-INF/pages/CalculateTax.jsp</result>
+		</action>
+
+		<action name="addCalculatedTax"
+			class="data.action.CalculateTaxAction">
+			<result name="success">/WEB-INF/pages/AdminDashboard.jsp</result>
+			<result name="error">/WEB-INF/pages/CalculateTax.jsp</result>
+		</action>
+
+		<action name="registerPage">
+			<result name="success">/WEB-INF/pages/register.jsp</result>
+			<result name="error">/WEB-INF/pages/register.jsp</result>
+		</action>
+
+		<action name="registerForm" class="data.action.RegisterAction">
+			<result name="success">/WEB-INF/pages/Login.jsp</result>
+			<result name="error">/WEB-INF/pages/register.jsp</result>
+		</action>
+
+		<action name="adminDashboard"
+			class="data.action.AdminDashboardAction">
+			<result name="adminDashboard">/WEB-INF/pages/AdminDashboard.jsp</result>
+		</action>
+
+		<action name="employeeDashboard"
+			class="data.action.EmployeeDashboardAction">
+			<result name="success">/WEB-INF/pages/EmployeeDashboard.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
